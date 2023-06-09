@@ -1,5 +1,6 @@
 #include "LearnStl.h"
 #include <iostream>
+#include <algorithm>
 
 
 void LearnStl::Test(TestType type)
@@ -27,12 +28,15 @@ void LearnStl::LearnVector()
 {
    
     //Base base(3,2);
-    std::vector<Base> vec1;
-    std::vector<Base> vec2;
-    //vec1.push_back({2,3});
-    vec2.emplace_back(2,3);
-    
+    std::vector<int> vec1 = {
+        1,5,4,2,5,9,7,8,9,3
+    };
+    auto printVec = [&] () {
+        for (auto it : vec1) {
+            std::cout << it << "," << std::endl;
+        }
+    };
 
+    std::sort(vec1.begin(),vec1.end(), [&](int a, int b) { return a < b ;});
+    printVec();
 }
-
-
