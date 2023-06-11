@@ -20,6 +20,11 @@ public:
         std::cout << "copy." << std::endl;
         m_val = rsh.m_val;
     }
+
+    Base(Base &&rsh) {
+        std::cout << "move." << std::endl;
+    }
+
     ~ Base() {
         std::cout << "~Base." << std::endl;
     }
