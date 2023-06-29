@@ -80,7 +80,7 @@ void Sort::QuickSort(int* arr, int left, int right)
         {
             rtemp--;
         }
-
+        
         if (ltemp <= rtemp) {
             Swap(arr[rtemp], arr[ltemp]);
             --rtemp;
