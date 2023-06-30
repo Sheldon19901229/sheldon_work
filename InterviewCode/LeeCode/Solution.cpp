@@ -24,7 +24,7 @@ std::string Solution::GetPressedString(const std::string &str) {
     }
   }
 
-  ret += std::to_string(chCnt); // ç¡®ä¿æœ€å1ä¸ªçš„å­—ç¬¦çš„æ•°é‡ä¿¡æ¯èƒ½æ·»åŠ ä¸Š
+  ret += std::to_string(chCnt); // È·±£×îºó1¸öµÄ×Ö·ûµÄÊıÁ¿ĞÅÏ¢ÄÜÌí¼ÓÉÏ
 
   return (ret.size() >= str.size()) ? str : ret;
 }

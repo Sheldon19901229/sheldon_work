@@ -62,41 +62,31 @@ void Sort::InsertionSort(int* arr, int len)
 // 快速排序:时间:O(nlogn),空间:O(logn),递归思想
 void Sort::QuickSort(int* arr, int left, int right)
 {
-    if (arr == nullptr) {
+    if (arr == nullptr || left + 1 >=  right) {
         return;
     }
 
-    int rtemp = right;
-    int ltemp = left;
-    int base = arr[(right + left) / 2];
-    while (ltemp < rtemp)
+    int first = left;
+    int last = right - 1;
+    int base = arr[first];
+    while (first < last)
     {
-        while (arr[ltemp] < base)
+        while (first < last && arr[last] > base)
         {
-            ltemp++;
+            last--;
         }
 
-        while (arr[rtemp] > base)
+        arr[first] = arr[last];
+
+        while (first < last && arr[first] < base)
         {
-            rtemp--;
+            first++;
         }
-        
-        if (ltemp <= rtemp) {
-            Swap(arr[rtemp], arr[ltemp]);
-            --rtemp;
-            ++ltemp;
-        }
+
+        arr[last] = arr[first];        
     }
 
-    if (rtemp == ltemp) {
-        ltemp++;
-    }
-
-    if (left < rtemp) {
-        QuickSort(arr,left, ltemp - 1);
-    }
-
-    if (ltemp < right) {
-        QuickSort(arr, rtemp + 1, right);
-    }
+    arr[first] = base;
+    QuickSort(arr, left, first);
+    QuickSort(arr, first + 1, right);
 }
