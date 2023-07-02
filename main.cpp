@@ -21,6 +21,5 @@ int main() {
         return 0;
     };
     print_arr();
-    cout << GetMsTimeStamp();
     return 0;
 }
