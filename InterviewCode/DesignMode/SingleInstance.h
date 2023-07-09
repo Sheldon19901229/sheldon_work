@@ -99,7 +99,7 @@ private:
 std::shared_ptr<SingleInstance_2> SingleInstance_2::m_instance = nullptr;
 std::once_flag SingleInstance_2::flag;
 
-// 改进的单例模式,c++11的例表参数
+// 改进的单例模式,c++11的列表参数
 template<typename T>
 class SingleInstance_3 {
 public:
