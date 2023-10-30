@@ -3,23 +3,20 @@
 #include "LearnStl.h"
 #include "Sort.h"
 #include <string>
-#include "Log.h"
+//#include "Log.h"
 #include "TimeStamp.h"
 #include "Solution.h"
+#include <thread>
 
 using namespace std;
 
 int main() {
-    Solution obj;
-    cout << obj.GetPressedString("aaaccccccccddcccccc") << endl;
 
 
-    std::cout << "ns:" << GetTimeCount(TIME_STAMP_NS) << endl;
-    std::cout << "us:" << GetTimeCount(TIME_STAMP_US) << endl;
-    std::cout << "ms:"<< GetTimeCount(TIME_STAMP_MS) << endl;
-    std::cout << "s:" << GetTimeCount(TIME_STAMP_S) << endl;
-    std::cout << "min:"<< GetTimeCount(TIME_STAMP_MIN) << endl;
-    std::cout << "hour:"<< GetTimeCount(TIME_STAMP_H) << endl;
-    std::cout << GetMsTimeStamp() << endl;
+    while(true) {
+        std::cout << "ms:" << get_time_stamp_ms() << endl;
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+    }
+
     return 0;
 }

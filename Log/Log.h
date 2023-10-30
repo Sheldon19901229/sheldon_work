@@ -23,7 +23,7 @@ void WriteLog(const char *msgInfo, ...) {
     }
 
     logMsg[idx] = '\0';
-    std::cout << logMsg; // Ìæ»»³ÉÎÄµµÊä³ö
+    std::cout << logMsg;
 }
 
 #endif
