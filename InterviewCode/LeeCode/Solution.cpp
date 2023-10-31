@@ -24,7 +24,7 @@ std::string Solution::GetPressedString(const std::string &str) {
     }
   }
 
-  ret += std::to_string(chCnt); // 确保最后1个的字符的数量信息能添加上
+  ret += std::to_string(chCnt);
 
   return (ret.size() >= str.size()) ? str : ret;
 }

@@ -5,17 +5,20 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <iostream>
+#include "TimeStamp.h"
+
 constexpr unsigned int  TOOL_LOG_BUFF_SIZE = 1024;
 
-void WriteLog(const char *msgInfo, ...) {
+static void WriteLog(const char *msgInfo, ...)
+{
     if (msgInfo == nullptr) {
         return;
     }
 
-    char logMsg[TOOL_LOG_BUFF_SIZE] = { 0 };
+    char logMsg[TOOL_LOG_BUFF_SIZE] = {0};
     va_list argList;
-    va_start(argList,msgInfo);
-    auto idx = vsnprintf(logMsg, sizeof(logMsg), msgInfo,argList);
+    va_start(argList, msgInfo);
+    auto idx = vsnprintf(logMsg, sizeof(logMsg), msgInfo, argList);
     va_end(argList);
 
     if (idx < 0 || idx >= TOOL_LOG_BUFF_SIZE) {
@@ -23,7 +26,8 @@ void WriteLog(const char *msgInfo, ...) {
     }
 
     logMsg[idx] = '\0';
-    std::cout << logMsg;
+
+    std::cout << get_time_stamp_sec() + " " + logMsg;
 }
 
 #endif
