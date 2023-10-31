@@ -11,7 +11,5 @@ using namespace std;
 
 int main() {
     Solution obj;
-    cout << obj.GetPressedString("aaaccccccccddcccccc") << endl;
-    std::cout << GetMsTimeStamp() << endl;
     return 0;
 }
