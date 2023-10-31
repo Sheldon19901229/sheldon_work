@@ -12,6 +12,11 @@ using namespace std;
 
 int main()
 {
-    WriteLog("[info]:test cpp %d", __LINE__);
+    std::thread th = std::thread([] () { while (true) {
+        WriteLog("[info]:test cpp %d", __LINE__);
+        this_thread::sleep_for(std::chrono::seconds(1));
+    } });
+
+    th.join();
     return 0;
 }

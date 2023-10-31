@@ -25,7 +25,8 @@ static void WriteLog(const char *msgInfo, ...)
         return;
     }
 
-    logMsg[idx] = '\0';
+    logMsg[idx] = '\n';
+    logMsg[idx+1] = '\0';
 
     std::cout << get_time_stamp_sec() + " " + logMsg;
 }
