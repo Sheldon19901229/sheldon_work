@@ -13,7 +13,7 @@ static std::string get_time_stamp_ms()
     auto count = time_point.time_since_epoch().count();
     std::tm* now = gmtime(&c_time);
     char msg_buffer[64] = { 0 };
-    sprintf_s(msg_buffer, 64, "%4d-%02d-%02d %02d:%02d:%02d %04d", now->tm_year + 1900, now->tm_mon + 1, now->tm_mday, now->tm_hour, now->tm_min, now->tm_sec, static_cast<int>(count % 1000));
+    sprintf_s(msg_buffer, 64, "%4d-%02d-%02d %02d:%02d:%02d.%04d", now->tm_year + 1900, now->tm_mon + 1, now->tm_mday, now->tm_hour, now->tm_min, now->tm_sec, static_cast<int>(count % 1000));
     return std::string(msg_buffer);
 }
 
