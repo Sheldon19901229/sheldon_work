@@ -12,6 +12,5 @@ using namespace std;
 int main() {
     Solution obj;
     std::cout << "test" << std::endl;
-    std::cout << "test3" << std::endl;
     return 0;
 }
