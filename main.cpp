@@ -7,9 +7,7 @@
 #include "TimeStamp.h"
 #include "Solution.h"
 
-using namespace std;
-
 int main() {
-    Solution obj;
+    std::cout << "main" << std::endl;
     return 0;
 }
