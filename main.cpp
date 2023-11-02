@@ -11,6 +11,5 @@ using namespace std;
 
 int main() {
     Solution obj;
-    std::cout << "test" << std::endl;
     return 0;
 }
