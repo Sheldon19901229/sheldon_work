@@ -8,6 +8,6 @@
 #include "Solution.h"
 
 int main() {
-    std::cout << "main....run  " << std::endl;
+    std::cout << "main....run     " << std::endl;
     return 0;
 }
