@@ -4,7 +4,6 @@
 
 class Solution {
 public:
-    std::string GetPressedString(const std::string &str); // ×Ö·û´®Ñ¹Ëõ
-
+    std::string GetPressedString(const std::string &str);
 };
 #endif
